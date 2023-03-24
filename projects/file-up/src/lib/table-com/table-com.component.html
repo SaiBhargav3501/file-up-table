@@ -1,0 +1,30 @@
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+    <tr>
+        <!-- <th><a (click)="sortBy('name')">NAME{{sortIcon('name')}}</a></th> -->
+        <th >Id</th>
+        <th >Name</th>
+        <th>Size </th>
+        <th>type</th>
+        <th>last  Modified</th>
+        <th >content</th>
+
+       
+        
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let data of alldata">
+        <td>{{data.id}}</td>
+        <td>{{data.file.name}}</td>
+        <td>{{data.file.size}}</td>
+        <td>{{data.file.type}}</td>
+        <td>{{data.file.lastModified}}</td>
+        <td ><textarea rows="30" cols="60">{{data.content}}</textarea></td>
+        
+    </tr>
+</tbody>
+    
+
+</table>
