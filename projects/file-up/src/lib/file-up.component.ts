@@ -1,5 +1,5 @@
 
-import { Component,Input,Output,EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 
 @Component({
@@ -7,7 +7,7 @@ import { Observable, Subscriber } from 'rxjs';
   template: `
   <div>
     <label >{{labelname}}</label>
-    <input type="file" (change)="onFileSelected($event)"  [accept]="accept" />
+    <input type="file" (change)="onFileSelected($event)"  [accept]="accept" placeholder="choose the file" title="inputfile"/>
    </div>
    <!-- <input type="search" [(ngModel)]="filtertext" placeholder="search for file"/> -->
     <lib-table-com [fileDetails]="opFile" [fileData]="totaldata" [listData]="filteredStudents"></lib-table-com>
@@ -16,7 +16,7 @@ import { Observable, Subscriber } from 'rxjs';
   styles: [
   ]
 })
-export class FileUpComponent {
+export class FileUpComponent{
   encoding:any;
   _filtertext:string=''
   @Input() schema:any
@@ -151,5 +151,8 @@ export class FileUpComponent {
      }
 
   }
+   
+
+  
 
 }
